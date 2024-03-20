@@ -16,8 +16,17 @@ router.get("/:game", async function(req, res, next) {
                     message: "Not found"
                 })
         }).catch(error => {
-            res.status(error.response.status).send({
-                message: error.response.statusText            
+            console.error(error)
+            const parsedError = {
+                status: 404,
+                message: "Not Found"
+            }
+            if (error.response) {
+                parsedError.status = error.response.status
+                parsedError.message = error.response.message
+            }
+            res.status(parsedError.status).send({
+                message: parsedError.message    
             })
         })
     
