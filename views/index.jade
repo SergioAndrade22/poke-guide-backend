@@ -1,0 +1,18 @@
+extends layout
+
+block content
+  h1= title
+  h3 Welcome to #{title}!
+  p To retrieve the required information perform a GET request to /trainers?game=GAME, where GAME meets one of the following:
+  ul 
+    li Red or Blue: rb
+    li Yellow: yellow
+    li Gold or Silver: gs
+    li Crystal: crystal
+    li Fire Red or Leaf Green: fireredleafgreen
+    li Emerald: emerald
+    li Ruby or Sapphire: ruby/sapphire
+    li Black or White: blackwhite
+    li X or Y: xy
+    li Omega Ruby or Alpha Sapphire: omegarubyalphasapphire 
+    li Let's Go Pikachu or Let's Go Eevee: letsgopikachueevee
